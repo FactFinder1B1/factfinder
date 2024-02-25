@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create New Page</title>
+<style>
+    #new-page-form {
+        margin: 20px;
+    }
+</style>
+</head>
+<body>
+
+<h1>New Page</h1>
+
+<form id="new-page-form">
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title" required><br>
+    <label for="content">Content:</label><br>
+    <textarea id="content" name="content" rows="4" cols="50" required></textarea><br><br>
+    <button type="submit">Create Page</button>
+</form>
+
+<div id="result" style="display: none;">
+    <h2>New Page Created:</h2>
+    <p id="new-page-title"></p>
+    <p id="new-page-content"></p>
+</div>
+
+<script>
+document.getElementById("new-page-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var title = document.getElementById("title").value;
+    var content = document.getElementById("content").value;
+
+    // Display the new page details
+    document.getElementById("new-page-title").innerText = "Title: " + title;
+    document.getElementById("new-page-content").innerText = "Content: " + content;
+    document.getElementById("result").style.display = "block";
+});
+</script>
+
+</body>
+</html>
